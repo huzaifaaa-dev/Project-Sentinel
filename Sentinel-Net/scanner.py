@@ -11,6 +11,7 @@ for port in range(1, 1025):
         if result == 0:
                 print(f"Port {port}: OPEN")
                 found = True
+        sock.close()
 
 if not found:
         print("No open ports found.")
