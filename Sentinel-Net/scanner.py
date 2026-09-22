@@ -2,6 +2,13 @@ import socket
 
 target = "127.0.0.1"
 
+hostname_to_check = "google.com"
+try:
+    resolved_ip = socket.gethostbyname(hostname_to_check)
+    print(f"DNS Lookup: {hostname_to_check} = {resolved_ip}")
+except socket.gaierror:
+    print(f"DNS Lookup failed for {hostname_to_check}")
+
 found = False
 
 for port in range(1, 1025):
